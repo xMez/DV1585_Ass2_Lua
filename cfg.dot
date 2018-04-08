@@ -1,0 +1,91 @@
+digraph {blk0 [label="BBlock @ 0x55edd02b07b0
+blk0
+list[] <- {5, 6, 1, 2.4, 2.3, 2.5, 9, 14, 2, 15, 6, 7, 8, 97} ass {5, 6, 1, 2.4, 2.3, 2.5, 9, 14, 2, 15, 6, 7, 8, 97}
+_t0 <- list # list
+itemCount <- _t0 ass _t0
+True:  blk1
+"]
+blk0->blk1 [label="true"]
+blk1 [label="BBlock @ 0x55edd02b0d30
+blk1
+hasChanged <- false ass false
+_t1 <- itemCount - 1
+itemCount <- _t1 ass _t1
+i <- 1 ass 1
+True:  blk4
+"]
+blk1->blk4 [label="true"]
+blk4 [label="BBlock @ 0x55edd02b2450
+blk4
+eval <- i <= itemCount
+True:  blk5
+False: blk9
+"]
+blk4->blk5 [label="true"]
+blk4->blk9 [label="false"]
+blk5 [label="BBlock @ 0x55edd02b24a0
+blk5
+eval <- list[(int)i-1] > list[(int)i+1-1]
+True:  blk6
+False: blk8
+"]
+blk5->blk6 [label="true"]
+blk5->blk8 [label="false"]
+blk6 [label="BBlock @ 0x55edd02b4820
+blk6
+_t3 <- list[(int)i+1-1] ass list[(int)i+1-1]
+_t4 <- list[(int)i-1] ass list[(int)i-1]
+list[(int)i-1] <- _t3 ass _t3
+list[(int)i+1-1] <- _t4 ass _t4
+hasChanged <- true ass true
+True:  blk8
+"]
+blk6->blk8 [label="true"]
+blk8 [label="BBlock @ 0x55edd02b48c0
+blk8
+_t2 <- i + 1
+i <- _t2 ass _t2
+True:  blk4
+"]
+blk8->blk4 [label="true"]
+blk9 [label="BBlock @ 0x55edd02b5f00
+blk9
+True:  blk2
+"]
+blk9->blk2 [label="true"]
+blk2 [label="BBlock @ 0x55edd02b0d80
+blk2
+eval <- hasChanged == false
+True:  blk3
+False: blk1
+"]
+blk2->blk3 [label="true"]
+blk2->blk1 [label="false"]
+blk3 [label="BBlock @ 0x55edd02b0dd0
+blk3
+i <- 1 ass 1
+_t5 <- list # list
+True:  blk10
+"]
+blk3->blk10 [label="true"]
+blk10 [label="BBlock @ 0x55edd02b6450
+blk10
+eval <- i <= _t5
+True:  blk11
+False: blk12
+"]
+blk10->blk11 [label="true"]
+blk10->blk12 [label="false"]
+blk11 [label="BBlock @ 0x55edd02b64a0
+blk11
+_t7 <- list[(int)i-1] ass list[(int)i-1]
+_func <- print call _t7 
+_t6 <- i + 1
+i <- _t6 ass _t6
+True:  blk10
+"]
+blk11->blk10 [label="true"]
+blk12 [label="BBlock @ 0x55edd02b6810
+blk12
+"]
+}

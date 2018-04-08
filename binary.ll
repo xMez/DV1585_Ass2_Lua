@@ -47,7 +47,7 @@ break			{ return yy::parser::make_BREAK(yytext); }
 nil			{ return yy::parser::make_NIL(yytext); }
 false			{ return yy::parser::make_FALSE(yytext); }
 true			{ return yy::parser::make_TRUE(yytext); }
-[0-9]+			{ return yy::parser::make_NUMBER(yytext); }
+[0-9]+(\.[0-9])*			{ return yy::parser::make_NUMBER(yytext); }
 \"[^\"]*\"		{ return yy::parser::make_STRING(yytext); }
 \.\.\.			{ return yy::parser::make_TDOT(yytext); }
 [a-zA-Z_][a-zA-Z0-9_]*	{ return yy::parser::make_NAME(yytext); }
